@@ -15,6 +15,9 @@
 //    return view('welcome');
 //});
 
+/*
+ * 练手用的,与UserController.php.bak对应
+ *
 //用户添加路由
 Route::get('user/add','UserController@add');
 //用户执行添加路由
@@ -27,7 +30,7 @@ Route::get('user/edit/{id}','UserController@edit');
 Route::post('user/update','UserController@update');
 //用户删除路由
 Route::get('user/del/{id}','UserController@destroy');
-
+*/
 
 
 
@@ -45,14 +48,37 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'],function (){
 Route::get('/code/captcha/{tmp}','admin\LoginController@captcha');
 
 
-Route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=>'islogin'],function (){
+Route::get('noaccess','admin\LoginController@noaccess');
+
+Route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=>['hasRole','isLogin']],function (){
+
     //后台首页路由
     Route::get('index','LoginController@index');
     //后台欢迎页路由
     Route::get('welcome','LoginController@welcome');
     //后台退出登录路由
     Route::get('logout','LoginController@logout');
+
+
+    //后台用户模块相关路由
+    \Illuminate\Support\Facades\Route::post('/user/del','UserController@delAll');
+    \Illuminate\Support\Facades\Route::resource('user','UserController');
+    Route::get('user/auth/{id}','UserController@auth');
+    Route::post('user/doauth','UserController@doAuth');
+
+
+    //角色模块
+    //角色授权路由
+    \Illuminate\Support\Facades\Route::post('/role/del','RoleController@delAll');
+    Route::get('role/auth/{id}','RoleController@auth');
+    Route::post('role/doauth','RoleController@doAuth');
+    \Illuminate\Support\Facades\Route::resource('role','RoleController');
+
+
+    //权限模块
+    \Illuminate\Support\Facades\Route::post('permission/del','PermissionController@delAll');
+    \Illuminate\Support\Facades\Route::resource('permission','PermissionController');
+
+    //分类路由
+    \Illuminate\Support\Facades\Route::resource('cate','CateController');
 });
-
-
-
