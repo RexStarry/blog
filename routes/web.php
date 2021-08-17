@@ -80,5 +80,18 @@ Route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=>['hasRole','i
     \Illuminate\Support\Facades\Route::resource('permission','PermissionController');
 
     //分类路由
+    //修改排序
+    Route::post('cate/changeorder','CateController@changeOrder');
     \Illuminate\Support\Facades\Route::resource('cate','CateController');
+
+    //文章模块路由
+    //上传路由
+    Route::post('article/upload','ArticleController@upload');
+    Route::resource('article','ArticleController');
+
+    //网站配置模块路由
+    Route::post('config/changecontent','ConfigController@changeContent');
+    Route::get('config/putcontent','ConfigController@putContent');
+    Route::resource('config','ConfigController');
+
 });
