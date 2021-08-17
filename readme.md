@@ -1,11 +1,27 @@
 <h1>Laravel5.5 框架项目--博客系统</h1>
 
-
 <br>
 
-## 图片展示
-<img src="readme_img/login.png">
+此项目是观看b站上的转载视频而写的基于Laravel5.5框架的博客项目<br>
+b站上的转载视频地址：https://www.bilibili.com/video/BV1jJ41117fE?p=47<br>
+原讲师：于洪恩<br>
 
+
+## 图片展示
+- 个人博客需求分析（思维导图）
+<br><img src="readme_img/xmind.png">
+- 数据库
+<br><img src="readme_img/db.png">
+- 后台登录页面
+<br><img src="readme_img/login.png">
+- 用户列表
+<br><img src="readme_img/user_list.png">
+- 添加用户
+<br><img src="readme_img/user_add.png">
+- 添加文章
+<br><img src="readme_img/article_add.png">
+- 网站配置列表
+<br><img src="readme_img/config_list.png">
 
 <br>
 
@@ -57,9 +73,5 @@
 - 添加文章的内容和图片不知道怎么添加到数据库中
 - 网站配置列表的批量修改的网站状态无法修改
 - putContent调用
-=======
-<h1>Laravel5.5 妗嗘灦椤圭洰--鍗氬绯荤粺</h1>
-
-<br>
 
 
