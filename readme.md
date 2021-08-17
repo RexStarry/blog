@@ -2,8 +2,8 @@
 
 <br>
 
-此项目是观看b站上的转载视频而写的基于Laravel5.5框架的博客项目<br>
-b站上的转载视频地址：https://www.bilibili.com/video/BV1jJ41117fE?p=47<br>
+此项目是观看b站上的转载视频而写的基于Laravel5.5框架的博客项目<br><br>
+b站视频地址：https://www.bilibili.com/video/BV1jJ41117fE?p=47<br><br>
 原讲师：于洪恩<br>
 
 
